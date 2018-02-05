@@ -4,8 +4,8 @@
 function getStats(txt) {
     return {
         nChars: txt.length,
-        nWords: txt.split(" ").length,
-        nLines: txt.split(/\r\n|\r|\n/).length,
+        nWords: ,
+        nLines: getLines(txt),
         nNonEmptyLines: 22,
         averageWordLength: 3.3,
         maxLineLength: 33,
@@ -13,5 +13,29 @@ function getStats(txt) {
         longestWords: ["xxxxxxxxx", "123444444"],
         mostFrequentWords: ["hello(7)", "world(1)"]
     };
+}
+
+function getWords(txt) {
+	// Checks to see if txt is not an empty string
+	// If so, split txt by spaces and return length
+	// Else, return 0
+	if(txt) {
+		return txt.split(" ").length;
+	}
+	else {
+		return 0;
+	}
+}
+
+function getLines(txt) {
+	// Checks to see if txt is not an empty string
+	// If so, split by new line and return length
+	// Else, return 0
+	if(txt) {
+		return txt.split(/\r\n|\r|\n/).length;
+	}
+	else {
+		return 0;
+	}
 }
 
