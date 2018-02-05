@@ -4,8 +4,8 @@
 function getStats(txt) {
     return {
         nChars: txt.length,
-        nWords: 22,
-        nLines: 10,
+        nWords: txt.split(" ").length,
+        nLines: txt.split(/\r\n|\r|\n/).length,
         nNonEmptyLines: 22,
         averageWordLength: 3.3,
         maxLineLength: 33,
