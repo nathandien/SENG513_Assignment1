@@ -17,10 +17,13 @@ function getStats(txt) {
 
 function getWords(txt) {
 	// Checks to see if txt is not an empty string
-	// If so, split txt by spaces and return length
+	// If so, return number of words
 	// Else, return 0
 	if(txt) {
-		return txt.split(" ").length;
+		// Replaces new lines with spaces
+		txt = txt.replace(/\W+/g, " ")
+		txt = txt.replace(/\n/," ");
+		return txt.split(" ").length
 	}
 	else {
 		return 0;
