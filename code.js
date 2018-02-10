@@ -21,9 +21,9 @@ function getWords(txt) {
 	// Else, return 0
 	if(txt) {
 		// Replaces new lines with spaces
-		txt = txt.replace(/\W+/g, " ")
+		txt = txt.replace(/\W+/g, " ");
 		txt = txt.replace(/\n/," ");
-		return txt.split(" ").length
+		return txt.split(" ").length;
 	}
 	else {
 		return 0;
@@ -40,5 +40,40 @@ function getLines(txt) {
 	else {
 		return 0;
 	}
+}
+
+function getNonEmptyLines(txt) {
+	// Splits txt by new lines
+	txt = txt.split(/\r\n|\r|\n/).length;
+
+	let count = 0;
+	
+	for(let line of txt) {
+		// Removes white space
+		line = line.replace(/\s/g, "");
+		// Increments counter if line is not empty
+		if(line.length != 0) {
+			count++;
+		}
+	}
+	
+	return count;
+}
+
+function getMaxLine(txt) {
+	// Splits txt by new lines
+	txt = txt.split(/\r\n|\r|\n/).length;
+	let max = 0;
+	
+	// Finds the value of the max length line
+	for(let line of txt) {
+		// Get length of current line
+		len = line.length;
+		if(len >= max) {
+			max = len;
+		}
+	}
+	
+	return max;
 }
 
